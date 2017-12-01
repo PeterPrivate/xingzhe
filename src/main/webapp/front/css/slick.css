@@ -1,0 +1,269 @@
+/* Slider */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus {
+    outline: none;
+}
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+.slick-track:after {
+    clear: both;
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+.slick-slide img {
+    display: block;
+    width:100%;
+}
+.slick-slide.slick-loading img {
+    display: none;
+
+}
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+.slick-dots{
+    display: flex;
+    justify-content: center;
+}
+.slick-dots ul{
+
+}
+.slick-dots li button {
+    margin-top: 60px;
+    margin-right: 10px;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 12px;
+    height: 6px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: #959595;
+}
+.slick-dots li.slick-active button{
+    width: 24px;
+    background-color: #f34837;
+}
+
+
+.h300{height:300px; }
+.h295{height:295px; }
+
+.job-prospects{
+    height: 1000px;
+    width: 1180px;
+    margin: auto;
+    background:#fff  url("../images/desin-bg.png") no-repeat center;
+    position: relative;
+}
+
+.job{
+    position: absolute;
+    border-radius:50%;
+    box-sizing: border-box;
+    z-index:1;
+}
+.job p{
+    color: #fff;
+    font-size: 18px;
+    line-height:1.0;
+}
+.job p span{font-size:24px;}
+.job img{margin-bottom:10px;}
+.job-center{width:340px;height:340px;background:url(../images/de-cen.png);text-align:center;top:400px;left:420px;;}
+.job-ui{width:267px;height:267px;background:#f34837;opacity:0.7;top: 360px;left:236px;padding:100px 0 0 48px;}
+.job-des{width:274px;height:274px;background:#f34837;opacity:0.7;bottom: 110px;left:378px;padding:145px 0 0 50px;  }
+.job-web{  width:256px;height:256px;background:#f34837;opacity:0.7;bottom:155px;right:256px;padding:130px 0 0 45px;  }
+.job-dian{  width:270px;height:270px;background:#f34837;opacity:0.7;top:405px;right:222px;padding:100px 0 0 115px;  }
+.job-alldes{  width:274px;height:274px;background:#f34837;opacity:0.7;top: 212px;left:555px;padding:100px 0 0 60px;  }
+.job1{width:253px;height:253px;background:#f29a76;opacity:0.2;top: 210px;left:350px;}
+.job2{width:262px;height:262px;background:#f34837;opacity:0.2;top: 210px;left:508px;}
+.job3{width:172px;height:172px;background:#f39700;opacity:0.2;top: 290px;right:262px;}
+.job4{width:214px;height:214px;background:#f39700;opacity:0.2;top: 510px;left:270px;}
+.job5{width:77px;height:77px;background:#f39700;opacity:0.2;bottom: 220px;left:218px;}
+.job6{width:263px;height:263px;background:#f34837;opacity:0.2;bottom:132px;left:304px;}
+.job7{width:256px;height:256px;background:#facd89;opacity:0.2;bottom:100px;right:354px;}
+.job-prospects:hover .job-center{animation:move1 5s linear infinite alternate;  -moz-animation:move1 5s linear infinite alternate; -webkit-animation:move1 5s linear infinite alternate;  -o-animation:move1 5s linear infinite alternate;}
+@keyframes move1 {
+    0%   {left:420px; top:400px;}
+    25%  {left:420px; top:380px;}
+    50%  {left:400px; top:380px;}
+    75%  {left:400px; top:400px;}
+    100% {left:420px; top:400px;}
+}
+.job-prospects:hover .job-ui{animation:move2 5s linear infinite alternate;  -moz-animation:move2 5s linear infinite alternate; -webkit-animation:move2 5s linear infinite alternate;  -o-animation:move2 5s linear infinite alternate;}
+@keyframes move2 {
+    0%   {left:256px; top:360px;}
+    25%  {left:236px; top:360px;}
+    50%  {left:236px; top:380px;}
+    75%  {left:256px; top:380px;}
+    100% {left:256px; top:360px;}
+}
+.job-prospects:hover .job-des{animation:move3 5s linear infinite alternate;  -moz-animation:move3 5s linear infinite alternate; -webkit-animation:move3 5s linear infinite alternate;  -o-animation:move3 5s linear infinite alternate;}
+@keyframes move3 {
+    0%   {left:378px; bottom:110px;}
+    25%  {left:378px; bottom:130px;}
+    50%  {left:358px; bottom:130px;}
+    75%  {left:358px; bottom:110px;}
+    100% {left:378px; bottom:110px;}
+}
+.job-prospects:hover .job-web{animation:move4 5s linear infinite alternate;  -moz-animation:move4 5s linear infinite alternate; -webkit-animation:move4 5s linear infinite alternate;  -o-animation:move4 5s linear infinite alternate;}
+@keyframes move4 {
+    0%   {right:256px; bottom:155px;}
+    25%  {right:236px; bottom:155px;}
+    50%  {right:236px; bottom:175px;}
+    75%  {right:256px; bottom:175px;}
+    100% {right:256px; bottom:155px;}
+}
+.job-prospects:hover .job-dian{animation:move5 5s linear infinite alternate;  -moz-animation:move5 5s linear infinite alternate; -webkit-animation:move5 5s linear infinite alternate;  -o-animation:move5 5s linear infinite alternate;}
+@keyframes move5 {
+    0%   {right:222px; top:405px;}
+    25%  {right:256px; top:405px;}
+    50%  {right:256px; top:385px;}
+    75%  {right:222px; top:385px;}
+    100% {right:222px; top:405px;}
+}
+.job-prospects:hover .job-alldes{animation:move6 5s linear infinite alternate;  -moz-animation:move6 5s linear infinite alternate; -webkit-animation:move6 5s linear infinite alternate;  -o-animation:move6 5s linear infinite alternate;}
+@keyframes move6 {
+    0%   {left:555px; top:212px;}
+    25%  {left:535px; top:212px;}
+    50%  {left:535px; top:192px;}
+    75%  {left:555px; top:192px;}
+    100% {left:555px; top:212px;}
+}
+.job-prospects:hover .job1{animation:move7 5s linear infinite alternate;  -moz-animation:move7 5s linear infinite alternate; -webkit-animation:move7 5s linear infinite alternate;  -o-animation:move7 5s linear infinite alternate;}
+@keyframes move7 {
+    0%   {left:350px; top:210px;}
+    25%  {left:330px; top:210px;}
+    50%  {left:330px; top:230px;}
+    75%  {left:350px; top:230px;}
+    100% {left:350px; top:210px;}
+}
+.job-prospects:hover .job2{animation:move8 5s linear infinite alternate;  -moz-animation:move8 5s linear infinite alternate; -webkit-animation:move8 5s linear infinite alternate;  -o-animation:move8 5s linear infinite alternate;}
+@keyframes move8 {
+    0%   {left:508px; top:210px;}
+    25%  {left:508px; top:230px;}
+    50%  {left:528px; top:230px;}
+    75%  {left:528px; top:210px;}
+    100% {left:508px; top:210px;}
+}
+.job-prospects:hover .job3{animation:move9 5s linear infinite alternate;  -moz-animation:move9 5s linear infinite alternate; -webkit-animation:move9 5s linear infinite alternate;  -o-animation:move9 5s linear infinite alternate;}
+@keyframes move9 {
+    0%   {right:262px; top:290px;}
+    25%  {right:262px; top:270px;}
+    50%  {right:242px; top:270px;}
+    75%  {right:242px; top:290px;}
+    100% {right:262px; top:290px;}
+}
+.job-prospects:hover .job4{animation:move10 5s linear infinite alternate;  -moz-animation:move10 5s linear infinite alternate; -webkit-animation:move10 5s linear infinite alternate;  -o-animation:move10 5s linear infinite alternate;}
+@keyframes move10 {
+    0%   {left:270px; top:510px;}
+    25%  {left:270px; top:530px;}
+    50%  {left:290px; top:530px;}
+    75%  {left:290px; top:510px;}
+    100% {left:270px; top:510px;}
+}
+.job-prospects:hover .job5{animation:move11 5s linear infinite alternate;  -moz-animation:move11 5s linear infinite alternate; -webkit-animation:move11 5s linear infinite alternate;  -o-animation:move11 5s linear infinite alternate;}
+@keyframes move11 {
+    0%   {left:218px; bottom:220px;}
+    25%  {left:238px; bottom:220px;}
+    50%  {left:238px; bottom:240px;}
+    75%  {left:218px; bottom:240px;}
+    100% {left:218px; bottom:220px;}
+}
+.job-prospects:hover .job6{animation:move12 5s linear infinite alternate;  -moz-animation:move12 5s linear infinite alternate; -webkit-animation:move12 5s linear infinite alternate;  -o-animation:move12 5s linear infinite alternate;}
+@keyframes move12 {
+    0%   {left:304px; bottom:132px;}
+    25%  {left:304px; bottom:152px;}
+    50%  {left:324px; bottom:152px;}
+    75%  {left:324px; bottom:132px;}
+    100% {left:304px; bottom:132px;}
+}
+.job-prospects:hover .job7{animation:move13 5s linear infinite alternate;  -moz-animation:move13 5s linear infinite alternate; -webkit-animation:move13 5s linear infinite alternate;  -o-animation:move13 5s linear infinite alternate;}
+@keyframes move13 {
+    0%   {right:354px; bottom:100px;}
+    25%  {right:334px; bottom:100px;}
+    50%  {right:334px; bottom:120px;}
+    75%  {right:354px; bottom:120px;}
+    100% {right:354px; bottom:100px;}
+}
+.student-oups{
+    height: 664px;
+    background:  url("../images/oups-bg.png") no-repeat center;
+    background-size: cover;
+    color:#fff;
+}
+.student-oups .actualbt em{color:#fff;padding-top:100px;}
+.student-oups .actualbt span{margin-bottom:70px;}
+

@@ -1,0 +1,130 @@
+﻿/* Slider */
+.slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: none; touch-action: none; -webkit-tap-highlight-color: transparent; }
+
+.slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }
+.slick-list:focus { outline: none;border: 0; }
+
+.slick-list.dragging { cursor: pointer;  }
+
+.slick-slider .slick-list, .slick-track, .slick-slide, .slick-slide img { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+.slick-track { position: relative; left: 0; top: 0; display: block; zoom: 1; }
+.slick-track:before, .slick-track:after { content: ""; display: table; }
+.slick-track:after { clear: both; }
+.slick-loading .slick-track { visibility: hidden; }
+
+.slick-slide { float: left; height: 100%; min-height: 1px; display: none; }
+.slick-slide img { display: block; }
+.slick-slide.slick-loading img { display: none; }
+.slick-slide.dragging img { pointer-events: none; }
+.slick-initialized .slick-slide { display: block; }
+.slick-loading .slick-slide { visibility: hidden; }
+.slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent; }
+
+/* Arrows */
+/*.slick-prev{background:url(../images/arrow-r.jpg) no-repeat center;}
+.slick-next{background:url(../images/arrow-left.png) no-repeat center;}*/
+.slick-prev, .slick-next { position: absolute; display: block; height: 50px; width: 50px;  cursor: pointer; bottom: 110px; border:1px solid #666;border-radius:50%; outline: none;font-size:0;line-height:0;background:transparent;color:transparent; }
+.slick-prev:focus, .slick-next:focus { outline: none;}
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before { opacity:1; }
+.slick-prev { left: 310px; }
+.slick-next { right: 310px;}
+.slick-prev:after{position:absolute;left:-392px;width:40px;height:4px;content:'';background:url(../images/arrow-cl.png) no-repeat center;z-index:5;}
+.slick-next:after{position:absolute;right:-392px;width:40px;height:4px;content:'';background:url(../images/arrow-cr.png) no-repeat center;z-index:5;}
+
+
+
+.left{ float:left;}
+.right { float:right;}
+body{background:#000;}
+.s-same{width:1180px;margin:0 auto;box-sizing: border-box;}
+.relative{position:relative;}
+
+/*banner*/
+.xz-banner{width:100%;height:100%;background:url(../images/xz-bg_02.jpg) repeat center;/*background-size:contain;margin-top:80px;box-sizing: border-box;*/}
+.xz-logo{display:block;width:138px;height:72px;padding-top:330px;margin:0 auto;}
+.xz-banner p{display:block;margin-top:20px;text-align:center;line-height:24px;font-size:14px;color:#999;}
+
+/*行者精神*/
+.spirit,.growth,.return,.advanced{padding-top:120px;}
+.growth .s-title{width:294px;}
+.s-title{width:288px;display:block;margin:0 auto 6px;}
+.s-desc{line-height:24px;font-size:24px;color:#999;text-align:center;}
+.spirit-content{height:550px;
+	background:url(../images/xzhe-bg.jpg) no-repeat center;margin-top:30px;padding:170px 0 0 130px;box-sizing: border-box;}
+.spirit-content img{display:block;}
+.xz-01{width:160px;}
+.xz-02{width:396px;margin:20px 0;}
+.spirit-content p{line-height:24px;font-size:12px;color:#999;}
+
+/*行者成长录*/
+.growth-content{margin-top:50px;padding:0 62px;text-align:center;}
+.growth-content li{float:left;width:260px;height:320px;background:url(../images/gradation.png) no-repeat center;}
+.mt138{margin:0 138px;}
+.growth-content li img{margin-top:55px;}
+.growth-content li h4{line-height:24px;font-size:24px;color:#fff;margin:20px 0 45px;}
+.growth-content li p{line-height:12px;font-size:12px;color:#999;padding-bottom:12px;text-align:left;padding-left:78px;}
+.growth-btn{box-sizing:border-box;width:348px;height:62px;border-radius:31px;border:1px solid #666;text-align:center;line-height:62px;font-size:18px;color:#f34837;margin:90px auto 0;}
+
+/*行者进阶*/
+.advanced{}
+.advanced-content{margin:70px auto 0;width:250px;}
+.helmet{display:block;width:98px;height:90px;margin:0 auto 40px;}
+.horse{display:block;width:250px;height:266px;margin:0 auto;}
+.advanced-content div p{text-align:center;margin-bottom:15px;line-height:24px;font-size:18px;color:#fff;}
+
+
+/*行者回归*/
+.return{}
+.return-content{margin-top:100px;width:100%;}
+.return-content li{float:left;width:25%;height:130px;box-sizing: border-box;border-right:1px dotted #666;padding:0 48px;}
+.return-content li:last-child{border-right:none;}
+.return-content li h4{margin-bottom:20px;height:48px;line-height:48px;font-size:18px;color:#999;}
+.return-content li h4 span{font-family:Arial;font-size:48px;color:#f34837;}
+.return-content li p{line-height:24px;font-size:14px;color:#999;}
+
+/*合作团队*/
+.team{/*height:600px;*/padding-top:125px;position:relative;}
+.team-p{padding:0 80px;margin-top:50px;}
+.team-p a{display:block;width:200px;height:200px;float:left;margin-right:73px;}
+.team-p a img{display:block;width:100%;border-radius:50%;}
+.team-p .br0{margin-right:0;}
+.team-content{width:1020px;height:135px;box-sizing: border-box;border:1px solid #666;padding:42.5px 137px 42.5px 45px;margin:45px auto 0;}
+#trigon{position:absolute;bottom:135px;display:block;width:16px;height:12px; background:url(../images/polygons1.png) no-repeat center;}
+.active0{ left:170px;}
+.active1{ left:445px;}
+.active2{ right:445px;}
+.active3{ right:170px;}
+.team .team-content{display:none;}
+.team .block{display:block;}
+.team-content dt{font-size:12px;color:#999;width:175px;border-right:1px solid #666;height:50px;}
+.team-content .team-title{font-size:18px;color:#fff;line-height:26px;}
+.team-content dt span{display:block;line-height:24px;}
+.team-content dd{font-size:14px;color:#999;width:660px;padding-left:50px;box-sizing: border-box;line-height:24px;}
+
+/*合作机构*/
+.cora{  padding-top:110px;}
+.cora-content li{float:left;width:25%;text-align: center;}
+.cora-content li img{display:block;margin:0 auto 30px  }
+.cora-content li p{font-size:14px;color:#999;line-height:18px;}
+
+/*联系我们*/
+.contact{padding:195px 0 154px;}
+.contact-content{margin-top:50px;padding:0 84px;}
+.contact-content li{float:left;width: 220px;color:#fff;}
+.mr175{margin:0 175px;}
+.detail{
+	font-size: 18px;
+	margin-top: 40px;
+}
+.fot_t{
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+hr{
+	border: 0;
+	height:1px;
+	background-color: #666;
+}
+
+.swiper-slide .footer{position:absolute;bottom:0;left:0;}

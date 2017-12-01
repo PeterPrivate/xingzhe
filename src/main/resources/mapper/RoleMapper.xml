@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gxy.mapper.RoleMapper">
+
+    <!--通用查询结果列 -->
+    <!--<sql id="Base_Column_List">-->
+        <!--id, name, seq, description, status-->
+    <!--</sql>-->
+
+    <select id="selectRoleListByUserId" resultType="Role">
+        select * from role r inner join user_role ur  on r.id=ur.role_id
+        inner join user u on ur.user_id = u.id where u.id = #{value}
+    </select>
+
+    <select id="selectResourceIdListByRoleId" resultType="java.lang.Long">
+        select r.id from resource r inner join role_resource rr on rr.resource_id = r.id
+        inner join role ro on rr.role_id = ro.id
+        where ro.id = #{value}
+    </select>
+
+    <select id="selectNameListById" resultType="java.lang.String">
+        select r.name from role r inner join user_role ur on r.id = ur.role_id
+        inner join user u on u.id = ur.user_id
+        where u.id = #{value}
+    </select>
+
+
+</mapper>

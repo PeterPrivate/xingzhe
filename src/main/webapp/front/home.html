@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="行者定位互联网人才培养与团队孵化平台。以IT军事化职业教育为特色，为科技、互联网企业提供">
+    <meta name="keyword" content="行者，行者精进，忍者不悔">
+    <title>行者-首页</title>
+    <link rel="stylesheet" href="css/reset.css" th:href="@{/static/front/css/reset.css}" charset="UTF-8">
+    <link rel="stylesheet" href="css/home.css" th:href="@{/static/front/css/home.css}" charset="utf-8">
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <div class="nav clearfix">
+        <a class="nav-left fl" href="javascript:;"></a>
+        <ul class="nav-right fr">
+            <li><a href="javascript:;" class="active">首页</a></li>
+            <li class="nav-drop"><a href="college.html">学院</a>
+                <div class="nav-100">
+                    <dl class="nav-bt">
+                        <dd><a href="java.html">Java</a></dd>
+                        <dd><a href="ui.html">UI</a></dd>
+                        <dd><a href="web.html">Web</a></dd>
+                        <dd><a href="ar.html">AR/MR</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="zhiku.html">智库</a></li>
+            <li><a href="activity.html">动态</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--头部完成-->
+<!--轮播开始-->
+<!-- banner -->
+<div class="handle-banner mt80">
+    <ol class="hd"></ol>
+    <ul class="bd"></ul>
+</div>
+<!--轮播结束-->
+<!--人才孵化start-->
+<div class="project-menu">
+    <h3 class="project-title home_01 tit36">人才孵化</h3>
+    <p class="f14 c6">企业并非不需要人才，而是需要“学历+技能+经验”的新人才</p>
+    <div class="pro-list clearfix">
+        <a href="java.html" class="list-01">
+            <span><i></i></span>
+           <em></em>
+        </a>
+        <a href="ui.html" class="list-02">
+            <span><i></i></span>
+            <em></em>
+        </a>
+        <a href="web.html" class="list-03">
+            <span><i></i></span>
+            <em></em>
+        </a>
+        <a href="ar.html" class="list-04">
+            <span><i></i></span>
+            <em></em>
+        </a>
+    </div>
+</div>
+<!--项目孵化-->
+<div class="project-menu">
+    <h3 class="project-title home_02 tit36">项目孵化</h3>
+    <p class="f14 c6">为您提供专业全方位企业孵化服务</p>
+    <ul class="x-project clearfix">
+        <li>
+            <img src="images/xiang1.jpg" th:src="@{/static/front/images/xiang1.jpg}" alt="">
+            <div class="x_div">
+                <h5>互联网金融</h5>
+                <span class="line"></span>
+            </div>
+        </li>
+        <li><img src="images/xiang2.jpg" th:src="@{/static/front/images/xiang2.jpg}" alt="">
+            <div class="x_div">
+                <h5>电子商务</h5>
+                <span class="line"></span>
+            </div>
+        </li>
+        <li><img src="images/xiang3.jpg" th:src="@{/static/front/images/xiang3.jpg}" alt="">
+            <div class="x_div">
+                <h5 class="arial">AR/MR</h5>
+                <span class="line"></span>
+            </div>
+        </li>
+    </ul>
+
+    <a href="project.html" class="more">项目入驻</a>
+</div>
+
+<!--项目孵化end-->
+
+<!--专业创业联盟-->
+<div class="l-men">
+    <h3 class="l-title">
+        专业的创业服务联盟
+    </h3>
+    <ul class="list-con clearfix">
+        <li>
+            <img src="images/hundred.png" alt="">
+            <h5>跨领域创业导师</h5>
+            <p>亦师亦友的导师能够诊断初创问题<br>促进资金、技术、人才等资源对接</p>
+        </li>
+        <li class="list02">
+            <img src="images/thirty.png" alt="">
+            <h5>知名企业资源接入</h5>
+            <p>国际孵化器和创投机构零距离</p>
+        </li>
+        <li>
+            <img src="images/fivfy.png" alt="">
+            <h5>全方位团队分工</h5>
+            <p>明白你创业维艰的摸爬滚打<br>我们各司其职且与你同甘苦</p>
+        </li>
+    </ul>
+</div>
+<!--专业创业联盟end-->
+<!--智库-->
+<div class="project-menu">
+    <h3 class="project-title home_03 tit36">智库</h3>
+    <p class="f14 c6">专业强大的智囊团，IT领域的实战专家，<br/>提供专业的创业指导、企业内训、项目咨询、投融资服务</p>
+    <ul class="z-project clearfix mt80"></ul>
+</div>
+<!--智库end-->
+<!--动态-->
+<div class="r-wu clearfix">
+    <h3 class="project-title home_05 tit36">动态</h3>
+    <p class="f14 c6">为您提供前沿技术发展和趋势</p>
+    <div class="box6 clearfix">
+        <!--<div class="character">
+            <div class="success01"><img src="images/f2.jpg" alt=""></div>
+            <div class="full-line1"></div>
+            <p class="h2 elli">互联网金融社交交易平台</p>
+            <p class="p6 more-elli">目前国内首家基于社交网络，实现即时跨市场、跨平台金融投资的互联网金融社交交易平台。</p>
+        </div>
+        <div class="character">
+            <div class="success01"><img src="images/f2.jpg" alt=""></div>
+            <div class="full-line1"></div>
+            <p class="h2 elli">互联网金融社交交易平台目前国内首家基于社交网络，目前国内首家基于社交网络，</p>
+            <p class="p6 more-elli">目前国内首家基于社交网络，实现即时跨市场、跨平台金融投资的互联网金融社交交易平台。</p>
+        </div>
+        <div class="character">
+            <div class="success01"><img src="images/f2.jpg" alt=""></div>
+            <div class="full-line1"></div>
+            <p class="h2 elli">互联网金融社交交易平台</p>
+            <p class="p6 more-elli">目前国内首家基于社交网络，目前国内首家基于社交网络，目前国内首家基于社交网络，实现即时跨市场、跨平台金融投资的互联网金融社交交易平台。</p>
+        </div>-->
+    </div>
+    <!--<div class="fl w515"></div>
+    <div class="fr w515">
+        &lt;!&ndash;<a href="javascript:;" class="block">
+            <dl class="clearfix">
+                <dt class="fr"><img src="images/huodong.jpg" th:src="@{/static/front/images/huodong.jpg}"  alt=""></dt>
+                <dd class="fl">
+                    <h6 class="time">2016-12-21 09:00</h6>
+                    <h6 class="r-h6">2017“未来已来”全球人工智能高峰论坛</h6>
+                    <p class="r_title">大会背景2015年“互联网+传统行业“的深度融合发展模式再掀热潮，酒店业从传统住宿走向多元化发展的线下体验中心。</p>
+                </dd>
+            </dl>
+        </a>&ndash;&gt;
+    </div>-->
+</div>
+<!--合作伙伴-->
+<div class="h_project">
+    <h3 class="project-title home_04 tit36">智库</h3>
+    <!--<div class="h-title fc36">合作伙伴</div>-->
+    <div class="h_list clearfix">
+        <a href="http://www.gonghoo.com" class="gh"><span></span></a>
+        <a href="http://www.erongdu.com" class="rd"><span></span></a>
+        <a href="http://www.xlys1904.com/" class="xl"><span></span></a>
+        <a href="https://www.weidai.com.cn" class="wd"><span></span></a>
+    </div>
+</div>
+<!--合作伙伴end-->
+<!--页脚-->
+<div class="footer">
+    <div class="f-c">
+        <div class="x-z">
+            <img src="images/f-logo.png" alt="">
+        </div>
+        <p>杭州承恩教育咨询有限公司 版权所有 Copyright ©2017, All Rights Reserved 浙ICP备17033933号</p>
+        <ul>
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="mentorIntroduction.html">学院</a></li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="zhiku.html">智库</a></li>
+            <li><a href="activity.html">动态</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--页脚-->
+
+<!--回到顶部-->
+<div class="zx">
+    <ul>
+        <li class="li_1">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1015302389&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_qq">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2300705570&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_5 li_gd">
+            <span class="icon_s"></span>
+            <div style="display: none;">
+                <p>0571-28828241</p>
+            </div>
+        </li>
+        <li class="li_6" id="back" style="visibility: visible;">
+            <a href="javascript:void(0);">
+                <span class="icon_s"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="js/jquery.js" th:src="@{/static/front/js/jquery.js}" type="text/javascript"></script>
+<script src="js/slide.js" th:src="@{/static/front/js/slide.js}"></script>
+<script src="js/public.js" th:src="@{/static/front/js/public.js}" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    function getActivityPage() {
+        var page = 1,rows=3;
+        $.ajax({
+            url: '/api/article/list?articleType=3&page='+page+'&rows='+rows,
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                if(data.success) {
+                    data = data.obj.rows;
+                    var html = '';
+                    $.each(data, function (index, obj) {
+                        html += '<a class="character block" href="activitydetatils.html?id=' + obj.id + '"><div class="success01"><img src="' + obj.titleImg + '" alt=""></div><div class="full-line1"></div><p class="h2 elli">' + obj.title + '</p> <p class="p6 more-elli">' + obj.intro + '</p></a>';
+                    });
+                    $('.box6').html(html);
+                }
+            }});
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            url: api + "/api/slideshow/list",
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                if (data.success) {
+                    data = data.obj.rows;
+                    var text = '', txt = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var thumblength = data[i].imgPath;
+                        if (thumblength != 0) {
+                            img = '<a href="javascript:;"><img src="' + data[i].imgPath + '"></a>';
+                        } else {
+                            img = '<a href="javascript:;"><img src="images/default.jpg"></a>';
+                        }
+                        text += '<li style="display: none">'
+                            + img
+                                +'<h1 class="i-title">打造项目孵化、人才孵化的IT生态圈</h1>'
+                            + '</li>';
+                        txt += ' <li class=""></li>';
+                    }
+                    $('.handle-banner .bd').append(text);
+                    $('.handle-banner .hd').append(txt);
+                    //轮播插件调用
+                    /* banner */
+                    jQuery(".handle-banner").slide({
+                        mainCell: ".bd",
+                        effect: "fade",
+                        delayTime: 2000,
+                        interTime: 4000,
+                        autoPlay: true,
+                        trigger: "click"
+                    });
+                }
+
+            }
+        });
+        $.ajax({
+            url: api + "/api/tutor/list?isHomeDisplay=0&rows=5",
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                if (data.success) {
+                    data = data.obj.rows;
+                    var html = '';
+                    $.each(data, function (index, obj) {
+                        html += '<li><a href="mentorIntroduction.html?id=' + obj.id + '"><img src="'
+                            + obj.headImgExtra + '" alt=""><div class="show"><h5 class="show-title">'
+                            + obj.name + '</h5><p class="f14 mt8">'
+                            + obj.company + '</p><p class="f14">'
+                            + obj.position + '</p></div></a></li>';
+                    });
+                    $('.z-project').html(html);
+                }
+            }
+        });
+        getActivityPage();
+    })
+</script>
+</html>

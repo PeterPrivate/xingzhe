@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>行者</title>
+		<meta name="description" content="行者定位互联网人才培养与团队孵化平台。以IT军事化职业教育为特色，为科技、互联网企业提供">
+		<meta name="keyword" content="行者，行者精进，忍者不悔">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/mentor.css" />
+		<script type="text/javascript" src="js/jquery.js">
+		</script>
+	</head>
+
+	<body>
+	<!--头部-->
+	<div class="header">
+		<div class="nav clearfix">
+			<a class="nav-left fl" href="home.html"></a>
+			<ul class="nav-right fr">
+				<li><a href="home.html">首页</a></li>
+				<li class="nav-drop"><a href="college.html">学院</a>
+					<div class="nav-100">
+						<dl class="nav-bt">
+							<dd><a href="java.html">Java</a></dd>
+							<dd><a href="ui.html">UI</a></dd>
+							<dd><a href="web.html">Web</a></dd>
+							<dd><a href="ar.html">AR/MR</a></dd>
+						</dl>
+					</div></li>
+				<li><a href="project.html">项目</a></li>
+				<li><a href="zhiku.html" class="active">智库</a></li>
+				<li><a href="activity.html">动态</a></li>
+				<li><a href="about.html">关于我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--头部完成-->
+		<!--main-->
+		<div class="main-H">
+			<ul class="nav-list clearfix">
+				<li><a href="home.html" class="block">首页<span>></span></a></li>
+				<li><a href="zhiku.html" class="block">智库<span>></span></a></li>
+				<!--<li>吴吉义</li>-->
+			</ul>
+			<div class="main-H-middle">
+				<div class="main_left">
+					<!--<img src="images/s-pic.png" alt="wujiyi" />
+					<ul class="main_left_m">
+						<li class="m-one">吴吉义</li>
+						<li class="m-two">功虎创学院院长</li>
+						<li class="m-three"><span>常驻地</span>杭州市</li>
+					</ul>-->
+				</div>
+				<div class="main_right bdsharebuttonbox">
+					<ul class="main_right_r gb_resItms clearfix">
+						<li class="r-first ">分享到</li>
+						<li class="r-two">
+							<a title="分享到微信" href="#" class="jiathis_button_weixin"><img src="images/weixin.png" /></a>
+						</li>
+						<li class="r-three">
+							<a title="分享到新浪微博" href="#" class="jiathis_button_tsina"><img src="images/weibo.png" /></a>
+						</li>
+						<li class="r-four">
+							<a title="分享到QQ好友" href="#" class="jiathis_button_qzone"><img src="images/qq.png" /></a>
+						</li>
+					</ul>
+					<a href="javascript:;" class="invite"  id="btnInvitation">邀请</a>
+				</div>
+			</div>
+		</div>
+		<div class="main-B">
+			<p class="shortword">简介</p>
+			<p class="sw"></p>
+		</div>
+		<div class="main-BO">
+			<p class="BO-one">相关推荐</p>
+			<p class="BO-two"></p>
+			<p class="BO-three"><img src="images/refresh_03.png" />换一换</p>
+		</div>
+		<div class="main-FO">
+			<div class="big">
+				<div class="big1">
+
+				</div>
+				<div class="big2">
+
+				</div>
+			</div>
+		</div>
+	<!--页脚-->
+	<div class="footer">
+		<div class="f-c">
+			<div class="x-z">
+				<img src="images/f-logo.png" alt="">
+			</div>
+			<p>杭州承恩教育咨询有限公司  版权所有 Copyright ©2017, All Rights Reserved 浙ICP备17033933号</p>
+			<ul>
+				<li><a href="home.html">首页</a></li>
+				<li><a href="college.html">学院</a></li>
+				<li><a href="project.html">项目</a></li>
+				<li><a href="zhiku.html">智库</a></li>
+				<li><a href="activity.html">动态</a></li>
+				<li><a href="about.html">关于我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--页脚-->
+	<!--回到顶部-->
+	<div class="zx">
+		<ul>
+			<li class="li_1">
+				<a href="http://wpa.qq.com/msgrd?v=3&uin=1015302389&site=qq&menu=yes" target="_blank">
+					<span class="icon_s">&nbsp;</span>
+				</a>
+			</li>
+			<li class="li_qq">
+				<a href="http://wpa.qq.com/msgrd?v=3&uin=2300705570&site=qq&menu=yes" target="_blank">
+					<span class="icon_s">&nbsp;</span>
+				</a>
+			</li>
+			<li class="li_5 li_gd">
+				<span class="icon_s"></span>
+				<div style="display: none;">
+					<p>0571-28828241</p>
+				</div>
+			</li>
+			<li class="li_6" id="back" style="visibility: visible;">
+				<a href="javascript:void(0);">
+					<span class="icon_s"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/public.js"></script>
+	<!--弹框-->
+	<div class="alert"></div>
+	<div class="alert_content">
+			<img class="close" src="images/close.png" />
+			<img class="invitation" src="images/invitation.png" />
+			<form id="inviteMaster" action="/api/zhiku/inviteMaster" method="post">
+				<input type="text" name="tutorId" hidden>
+				<input type="text" name="sponsor" placeholder="主办方" />
+				<input type="text" name="linkman" placeholder="联系人" />
+				<input type="text" name="phone" placeholder="手机号" />
+				<textarea name="desc" rows="" cols="" placeholder="需求描述（选填）"></textarea>
+				<div class="men-money">
+					<input type="text" name="budget" class="" id="" value="" placeholder="费用预算" /><span class="money">元</span>
+				</div>
+				<input type="submit" class="submit" value="确 认" />
+				<div id="showMsg" hidden></div>
+				<div id="countDown" hidden></div>
+			</form>
+
+		</div>
+	<!--提交成功-->
+	<div class="alert_succ">
+		<img src="images/gou.png" alt="">
+		<p class="block">提交成功</p>
+		<a href="javascript:;" class="red">确认</a>
+	</div>
+
+		<script src="js/06-zhiku.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			var count = 0,total = 0,rows=10;
+			$(".BO-three").click(function(){
+				$(".big div:first-child").animate({marginLeft:"-1180px"},570,function(){
+				       count++;
+				       if(count%2==0){
+				           var pages = total/10;
+				           getTutor(Math.floor(Math.random()*pages)+1);
+					   }
+		                    var temp=$(this).clone();
+		                        $(this).remove();
+		                        temp.css({marginLeft:"2px"});
+		                    $(".big").append(temp);
+		               });
+  	            
+               clearInterval(tid);
+               var i = 0;
+               var tid = setInterval(function(){
+               		 $(".main-BO img").css({
+                    '-webkit-transform':'rotate(' + i + 'deg)',
+                    '-moz-transform':'rotate(' + i + 'deg)',
+                    '-ms-transform':'rotate(' + i + 'deg)',
+                    '-o-transform':'rotate(' + i + 'deg)'
+              		 });
+              		 //console.log(i)
+              	 i+=18;
+               },25);
+               setTimeout(function(){
+               	clearInterval(tid);
+               },570)
+			})
+			function getTutor(index) {
+                var page = 1;
+                if(index){
+                    page = index;
+				}
+                var args = urlArgs();
+                if(args.id){
+                    $.ajax({
+                        url: '/api/tutor/list?page='+page+'&rows=10&notTutorId='+args.id,
+                        type: 'POST',
+                        data: '',
+                        dataType: 'json',
+                        success: function (data) {
+                            if(data.success){
+                                data = data.obj;
+                                total = data.total;
+                                var temp='',html1='',html2='';
+                                $.each(data.rows,function (index,obj) {
+                                    if(index==5){
+                                        html1 = temp;
+                                        temp='';
+                                    }
+                                    temp+='<a href="mentorIntroduction.html?id='+obj.id+'" class="inline-block"><ul class="pic-list"><li class="pic-one"><img src="'
+                                        +obj.headImg+'" /></li><li class="pic-two">'
+                                        +obj.name+'</li><li class="pic-three"></li> <li class="pic-four">'
+                                        +obj.company+'<br />'
+                                        +obj.position+' </li></ul></a>';
+                                });
+                                html2 = temp;
+                                $('.big1').empty().append(html1);
+                                $('.big2').empty().append(html2);
+							}
+
+
+                        }
+                    });
+                }
+            }
+
+            function ajaxSubmitForm(){
+                jQuery.ajax({
+                    url:$('#inviteMaster')[0].action,
+                    data:$('#inviteMaster').serialize(),
+                    type:"POST",
+                    success:function(result)
+                    {
+                        if(result){
+                            $('.close').click();
+                            $('.alert_succ,.alert').show();
+                            $('.red').click(function(){
+                                $('.alert_succ,.alert').hide();
+                            })
+                        }
+                    },
+					dataType:"json"
+                });
+            }
+			$(function () {
+                var args = urlArgs();
+                if(args.id) {
+                    $.ajax({
+                        url: '/api/zhiku/tutorOne?id=' + args.id,
+                        type: 'POST',
+                        data: '',
+                        dataType: 'json',
+                        success: function (data) {
+                            var html = '';
+                            html = '<li><a href="javascript:;">' + data.name + '</a></li>';
+                            $('.nav-list').append(html);
+                            html = '<img src="' + data.headImg + '" alt="' + data.namePinyin + '" /><ul class="main_left_m"><li class="m-one">' + data.name + '</li><li class="m-two elli">' + data.company + data.position + '</li><li class="m-three"><span>常驻地</span>' + data.permanentLand + '</li></ul>';
+                            $('.main_left').append(html);
+                            html = '<p class="swl">' + data.intro + '</p>';
+                            $('.main-B').append(html);
+                            $('#inviteMaster input[name=tutorId]').val(data.id);
+                        }
+                    });
+                }
+                getTutor();
+                // 使用 jQuery异步提交表单
+
+                $('#inviteMaster').submit(function() {
+                    var sponsor,linkman,phone,desc,budget;
+                    sponsor = $('input[name="sponsor"]');
+                    linkman = $('input[name="linkman"]');
+                    phone = $('input[name="phone"]');
+                    desc = $('textarea[name="desc"]');
+                    budget = $('input[name="budget"]');
+                    var flag = true;
+					if(sponsor.val()==''){
+                        sponsor.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+                    }
+                    if(linkman.val()==''){
+                        linkman.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+                    }
+                    if(phone.val()==''){
+                        phone.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+                    }else if(!/^1[3578]\d{9}$/.test(phone.val())){
+                        phone.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+					}
+                    var reg =  new RegExp("^(-?\\d+)(\\.\\d+)?$");
+                    if(!budget.val() || budget.val()==''){
+                        budget.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+                    }else if(!(reg.test(budget.val()))){
+                        budget.css({background: "rgba(237,71,54,.15)"});
+                        flag = false;
+					}
+					if(flag){
+                        budget.val(parseFloat(budget.val()));
+                        ajaxSubmitForm();
+					}
+            		return false;
+                })
+
+                })
+		</script>
+	</body>
+
+</html>

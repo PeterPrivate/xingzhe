@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${db.master.url}"/>
+        <property name="username" value="${db.master.user}"/>
+        <property name="password" value="${db.master.password}"/>
+    </bean>
+    <!-- 配置SqlSessionFactoryBean：用来创建SqlSessionFacotry,并且扫描xml文件-->
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 自动扫描Mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:/mapper/*.xml"/>
+        <!--扫描实体类-->
+        <property name="typeAliasesPackage" value="com.gxy.entity"/>
+        <!--mybatis配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--mybatis-plus全局配置-->
+        <property name="globalConfig" ref="globalConfig"/>
+
+        <property name="plugins">
+            <array>
+                <bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor" id="paginationInterceptor">
+                    <property name="dialectType" value="mysql"/>
+                </bean>
+            </array>
+        </property>
+
+    </bean>
+
+    <!-- MP 全局配置 -->
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <!--主键为自增长-->
+        <property name="idType" value="0"/>
+        <!--下划线转驼峰命名-->
+        <property name="dbColumnUnderline" value="true"/>
+        <property name="metaObjectHandler">
+            <bean class="com.gxy.common.MyMetaObjectHandler"/>
+        </property>
+    </bean>
+
+    <!-- MyBatis 动态实现  -->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 对Dao 接口动态实现，需要知道接口在哪  -->
+        <property name="basePackage" value="com.gxy.mapper"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!--事务注解-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--事务管理属性-->
+    <tx:advice transaction-manager="transactionManager" id="transactionAdvice">
+        <tx:attributes>
+            <tx:method name="select*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置切面-->
+    <aop:config>
+        <aop:advisor advice-ref="transactionAdvice" pointcut="execution(* com.gxy.service..*.*(..))"/>
+    </aop:config>
+
+</beans>

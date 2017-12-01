@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>行者-动态详情</title>
+    <meta name="description" content="行者定位互联网人才培养与团队孵化平台。以IT军事化职业教育为特色，为科技、互联网企业提供">
+    <meta name="keyword" content="行者，行者精进，忍者不悔">
+    <!--重置样式-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <!--自己的样式-->
+    <link rel="stylesheet" type="text/css" href="css/activitydetails.css"/>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <div class="nav">
+        <a class="nav-left fl" href="home.html"></a>
+        <ul class="nav-right fr">
+            <li><a href="home.html">首页</a></li>
+            <li class="nav-drop">
+                <a href="college.html">学院</a>
+                <div class="nav-100">
+                    <dl class="nav-bt">
+                        <dd><a href="java.html">Java</a></dd>
+                        <dd><a href="ui.html">UI</a></dd>
+                        <dd><a href="web.html">Web</a></dd>
+                        <dd><a href="ar.html">AR/MR</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="zhiku.html">智库</a></li>
+            <li><a href="activity.html" class="active">动态</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--头部完成-->
+
+<!--xq表示详情界面-->
+<!--bg部分-->
+<div class="xq-bg"></div>
+<!--bg结束-->
+<!--中间正文区域-->
+<div class="xq-divide">
+    <!--正文导航栏-->
+    <ul class="xq-nav clearfix">
+        <li class="fl"><a href="home.html">首页 </a></li>
+        <li class="fl nav-sp"><span class="sp">></span></li>
+        <li class="fl"><a href="activity.html">动态 </a></li>
+        <li class="fl nav-sp"><span class="sp">></span></li>
+        <li class="fl"><a href="javascript:;">详情</a></li>
+    </ul>
+    <!--正文内容-->
+    <div class="center">
+        <!--正文头部-->
+        <div class="ct-head">
+
+        </div>
+        <!--正文内容展示-->
+        <div class="ct-bady">
+            <p></p>
+            <!--3个小图标-->
+            <!--分享代码-->
+            <div class="xq-icon">
+		<span>
+			分享到
+			<a class="jiathis_button_weixin"><img src="images/icon-wx.png"/></a>
+			<a class="jiathis_button_tsina" href=""><img src="images/icon-wb.png"/></a>
+			<a class="jiathis_button_qzone" href=""><img src="images/icon-QQ.png"/></a>
+		</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--页脚-->
+<div class="footer">
+    <div class="f-c">
+        <div class="x-z">
+            <img src="images/f-logo.png" alt="">
+        </div>
+        <p>杭州承恩教育咨询有限公司  版权所有 Copyright ©2017, All Rights Reserved 浙ICP备17033933号</p>
+        <ul>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="college.html">学院</a></li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="zhiku.html">智库</a></li>
+            <li><a href="activity.html">动态</a></li>
+            <li><a href="javascript:;">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--页脚-->
+
+<!--回到顶部-->
+<div class="zx">
+    <ul>
+        <li class="li_1">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1015302389&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_qq">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2300705570&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_5 li_gd">
+            <span class="icon_s"></span>
+            <div style="display: none;">
+                <p>0571-28828241</p>
+            </div>
+        </li>
+        <li class="li_6" id="back" style="visibility: visible;">
+            <a href="javascript:void(0);">
+                <span class="icon_s"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        var args = urlArgs();
+        if (args.id) {
+            $.ajax({
+                url: '/api/article/get?id=' + args.id,
+                type: 'POST',
+                data: '',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    if (data.success) {
+                        data = data.obj;
+                        var html = '<p class="ct-title">'
+                                + data.title + '</p><p class="ct-time">'
+                                + data.showTime + '<a class="ct-span" href="javascript:;">行者原创</a></p><img class="bg-s" src="'
+                                + data.titleImg + '"/>';
+                        $('.ct-head').append(html);
+                        html = data.content;
+                        $('.ct-bady p').prepend(escape2Html(html));
+                    }
+
+                }
+            });
+        }
+    })
+</script>
+</body>
+</html>

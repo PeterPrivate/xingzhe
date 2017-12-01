@@ -1,0 +1,74 @@
+.holder {
+	margin: 15px 0;
+	padding:0 15px;
+	display:inline-block;
+	font-family: 'Arial';
+}
+
+.holder a {
+	display:inline-block;
+	width: 34px;
+	height: 34px;
+	background-color: #fff;
+	border: 1px solid #ecf0f1;
+	text-align: center;
+	line-height: 34px;
+	font-size: 18px;
+	color: #999999;
+	margin-right: 18px;
+	border-radius: 5px;
+	vertical-align: top;
+}
+
+.holder a:hover {
+	background-color: #ed4736;
+	color: #fff;
+	cursor: pointer;
+}
+
+.jp-previous {
+	background-image: url(../images/arow.png);
+	background-repeat:no-repeat;
+	background-position:12px 10px;
+}
+.jp-previous:hover{
+	background-position:12px -56px;
+}
+.jp-next {
+	background-image: url(../images/arow.png);
+	background-repeat:no-repeat;
+	background-position:-28px 10px;
+}
+
+.jp-next:hover{
+	background-position:-28px -56px;
+}
+.holder a.jp-current, a.jp-current:hover {
+	background-color: #ed4736;
+	color: #fff;
+	border: 1px solid #ed4736;
+}
+
+/*.holder a.jp-disabled, a.jp-disabled:hover {
+	background-color: #f2f2f2;
+}*/
+
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+	cursor: default;
+}
+
+.holder span {
+	display:inline-block;
+	width: 34px;
+	height: 34px;
+	background-color: #fff;
+	border: 1px solid #ecf0f1;
+	text-align: center;
+	line-height: 34px;
+	font-size: 18px;
+	color: #999999;
+	margin-right: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+}

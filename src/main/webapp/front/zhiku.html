@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="行者定位互联网人才培养与团队孵化平台。以IT军事化职业教育为特色，为科技、互联网企业提供">
+    <meta name="keyword" content="行者，行者精进，忍者不悔">
+    <title>行者-智库</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/zhiku.css"/>
+    <link rel="stylesheet" href="css/jPages.css">
+</head>
+<body>
+
+<!--头部-->
+<div class="header">
+    <div class="nav clearfix">
+        <a class="nav-left fl" href="home.html"></a>
+        <ul class="nav-right fr">
+            <li><a href="home.html">首页</a></li>
+            <li class="nav-drop"><a href="college.html">学院</a>
+                <div class="nav-100">
+                    <dl class="nav-bt">
+                        <dd><a href="java.html">Java</a></dd>
+                        <dd><a href="ui.html">UI</a></dd>
+                        <dd><a href="web.html">Web</a></dd>
+                        <dd><a href="ar.html">AR/MR</a></dd>
+                    </dl>
+                </div>
+            </li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="javascript:;" class="active">智库</a></li>
+            <li><a href="activity.html">动态</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--头部完成-->
+
+
+<!--**********************banner*****************-->
+<div class="banner">
+    <h2>专业强大的智库资源</h2>
+    <h2>共同打造学术盛宴与思想分享平台</h2>
+</div>
+
+
+<!--***************列表******************-->
+<div class="list_nav1 x_mauto list_mt ">
+    <span class="list_nav1_top">领&nbsp;&nbsp;&nbsp;域&#58;</span>
+    <ul class="list_nav1_main1">
+    </ul>
+</div>
+
+<div class="list_nav1 x_mauto ">
+    <span class="list_nav1_top  ">首字母&#58;</span>
+    <ul class="list_nav1_main1 list_szm">
+        <li class="now_find"><a href="javascript:void(0)">全部</a></li>
+        <li><a href="javascript:void(0)">A-E</a></li>
+        <li><a href="javascript:void(0)">F-K</a></li>
+        <li><a href="javascript:void(0)">L-Q</a></li>
+        <li><a href="javascript:void(0)">R-V</a></li>
+        <li><a href="javascript:void(0)">W-Z</a></li>
+    </ul>
+</div>
+
+<!--***************列表内容*************-->
+<div id="itemContainer"></div>
+<div class="list_main clearfix"></div>
+
+
+<!--*********分页**********-->
+<div class="number">
+    <div class="holder clearfix"></div>
+</div>
+
+<!--****************活动*******************-->
+
+<h3 class="active_h3 tit36">精彩活动</h3>
+
+<ol class="active-01">
+
+</ol>
+<!--页脚-->
+<div class="footer">
+    <div class="f-c">
+        <div class="x-z">
+            <img src="images/f-logo.png" alt="">
+        </div>
+        <p>杭州承恩教育咨询有限公司  版权所有 Copyright ©2017, All Rights Reserved 浙ICP备17033933号</p>
+        <ul>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="college.html">学院</a></li>
+            <li><a href="project.html">项目</a></li>
+            <li><a href="javascript:;">智库</a></li>
+            <li><a href="activity.html">动态</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--回到顶部-->
+<div class="zx">
+    <ul>
+        <li class="li_1">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1015302389&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_qq">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2300705570&site=qq&menu=yes" target="_blank">
+                <span class="icon_s">&nbsp;</span>
+            </a>
+        </li>
+        <li class="li_5 li_gd">
+            <span class="icon_s"></span>
+            <div style="display: none;">
+                <p>0571-28828241</p>
+            </div>
+        </li>
+        <li class="li_6" id="back" style="visibility: visible;">
+            <a href="javascript:void(0);">
+                <span class="icon_s"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+
+<script src="js/jPages.js"></script>
+<!--页脚-->
+<script src="js/04_zhiku.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    var domainId = '', initialId = '';
+    function getTutorPage() {
+        var page = 1, rows = 15;
+        $.ajax({
+            url: "/api/tutor/list?page=" + page + "&rows=" + rows + "&sort=id&order=asc&domainTypes=" + domainId + "&initialScope=" + initialId,
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                if (data.success) {
+                    data = data.obj;
+                    var html = '';
+                    for (var i = 0; i < data.total; i++) {
+                        html += '<div></div>';
+                    }
+                    $('#itemContainer').empty().append(html);
+
+                    html = '';
+                    if (data.total > 0) {
+                        $.each(data.rows, function (index, obj) {
+                            html+=' <a href="mentorIntroduction.html?id=' + obj.id + '" class="fl"><img src="' + obj.headImg + '" alt="" class="list_img">'
+                                +'<span class="list_span1">'+ obj.name + '</span>'
+                                +'<span class="list_span2"></span>'
+                                +'<p class="list_p elli">'+ obj.company + '</p>'
+                                +'<p class="list_p elli">'+ obj.position +'</p></a>';
+                        });
+                        $('.list_main').empty().append(html);
+                        /* initiate the plugin */
+                        $("div.holder").jPages({
+                            containerID: "itemContainer",
+                            perPage: rows,
+                            startPage: 1,
+                            startRange: 1,
+                            midRange: 5,
+                            endRange: 1,
+                            callback: function (pages, items) {
+                                page = pages.current;
+                                $.ajax({
+                                    url: "/api/tutor/list?page=" + page + "&rows=" + rows + "&sort=id&order=asc&domainTypes=" + domainId + "&initialScope=" + initialId,
+                                    type: 'POST',
+                                    data: '',
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        if (data.success) {
+                                            data = data.obj;
+                                            var html = '';
+                                            $.each(data.rows, function (index, obj) {
+                                                html+=' <a href="mentorIntroduction.html?id=' + obj.id + '" class="fl"><img src="' + obj.headImg + '" alt="" class="list_img">'
+                                                    +'<span class="list_span1">'+ obj.name + '</span>'
+                                                    +'<span class="list_span2"></span>'
+                                                    +'<p class="list_p elli">'+ obj.company + '</p>'
+                                                    +'<p class="list_p elli">'+ obj.position +'</p></a>';
+                                              
+                                            });
+                                            $('.list_main').empty().append(html);
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    } else {
+                        $('div.holder').empty();
+                        html = '<div class="no_list"><i></i> <p>抱歉，没有搜到相关结果，换个词试试吧</p></div>';
+                        $('.list_main').empty().append(html);
+                    }
+                }
+            }
+        });
+    }
+    function getTotorByDomainType(index) {
+        if (index) {
+            domainId = index;
+        } else {
+            domainId = '';
+        }
+        getTutorPage();
+    }
+    $(function () {
+
+        $('.list_szm a').each(function (index, element) {
+            $(element).bind('click', function () {
+                initialId = index;
+                getTutorPage();
+            });
+        });
+
+        $.ajax({
+            url: "/api/zhiku/domainAll",
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                var html = '<li class="now_find"><a href="javascript:void(0)" onclick="getTotorByDomainType()">全部</a></li>';
+                $.each(data, function (index, obj) {
+                    html += '<li><a href="javascript:void(0)" onclick="getTotorByDomainType(' + obj.id + ')">' + obj.name + '</a></li>';
+                });
+                $('.list_mt .list_nav1_main1').append(html);
+                $(".list_nav1_main1 li").click(function () {
+                    $(this).addClass("now_find").siblings("li").removeClass("now_find")
+                });
+            }
+        });
+        getTutorPage();
+        $.ajax({
+            url: "/api/article/list?rows=3&articleType=3",
+            type: 'POST',
+            data: '',
+            dataType: 'json',
+            success: function (data) {
+                if (data.success) {
+                    data = data.obj.rows;
+                    var html = '';
+                    $.each(data, function (index, obj) {
+                        html+='<li class="active_one"><a href="activitydetatils.html?id=' + obj.id + '" class="active_img"><img src="' + obj.titleImg +'"/></a>'
+                            +'<a href="activitydetatils.html?id=' + obj.id + '" class="active_title elli block">'+ obj.title +'</a></li>';
+                    });
+                    $('.active-01').append(html);
+                }
+
+            }
+        });
+    });
+</script>
+</body>
+</html>

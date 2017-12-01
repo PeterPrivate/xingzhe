@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>行者-动态</title>
+		<meta name="description" content="行者定位互联网人才培养与团队孵化平台。以IT军事化职业教育为特色，为科技、互联网企业提供">
+		<meta name="keyword" content="行者，行者精进，忍者不悔">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/activity.css" />
+		<link rel="stylesheet" href="css/jPages.css">
+	</head>
+	<body>
+		<!--头部-->
+		<div class="header">
+			<div class="nav">
+				<a class="nav-left fl" href="home.html"></a>
+				<ul class="nav-right fr">
+					<li><a href="home.html">首页</a></li>
+					<li class="nav-drop"><a href="college.html">学院</a><div class="nav-100">
+						<dl class="nav-bt">
+							<dd><a href="java.html">Java</a></dd>
+							<dd><a href="ui.html">UI</a></dd>
+							<dd><a href="web.html">Web</a></dd>
+							<dd><a href="ar.html">AR/MR</a></dd>
+						</dl>
+					</div>
+						</li>
+					<li><a href="project.html">项目</a></li>
+					<li><a href="zhiku.html">智库</a></li>
+					<li><a href="javascript:;" class="active">动态</a></li>
+					<li><a href="about.html">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--头部完成-->
+		<!--行业前沿新解读背景图-->
+		<div class="working-bg">
+			<img src="images/big-img.png" />
+		</div>
+		<!--行业动态-->
+		<div class="working-news">
+			<!--行业动态头部-->
+				<h3 class="tit36 work-active">行业动态</h3>
+				<p class="news-p">为您提供前沿技术发展及趋势</p>
+		</div>
+        <!--数据个数容器，配合jpages实现分页-->
+        <div id="itemContainer"></div>
+		<div class="box6 clearfix">
+		</div>
+		<!--页码-->
+		<div class="number">
+			<div class="holder clearfix"></div>
+		</div>
+
+		<!--页脚-->
+		<div class="footer">
+			<div class="f-c">
+				<div class="x-z">
+					<img src="images/f-logo.png" alt="">
+				</div>
+				<p>杭州承恩教育咨询有限公司  版权所有 Copyright ©2017, All Rights Reserved 浙ICP备17033933号</p>
+				<ul>
+					<li><a href="home.html">首页</a></li>
+					<li><a href="college.html">学院</a></li>
+					<li><a href="project.html">项目</a></li>
+					<li><a href="zhiku.html">智库</a></li>
+					<li><a href="javascript:;">动态</a></li>
+					<li><a href="about.html">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--页脚-->
+
+		<!--回到顶部-->
+		<div class="zx">
+			<ul>
+				<li class="li_1">
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=1015302389&site=qq&menu=yes" target="_blank">
+						<span class="icon_s">&nbsp;</span>
+					</a>
+				</li>
+				<li class="li_qq">
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=2300705570&site=qq&menu=yes" target="_blank">
+						<span class="icon_s">&nbsp;</span>
+					</a>
+				</li>
+				<li class="li_5 li_gd">
+					<span class="icon_s"></span>
+					<div style="display: none;">
+						<p>0571-28828241</p>
+					</div>
+				</li>
+				<li class="li_6" id="back" style="visibility: visible;">
+					<a href="javascript:void(0);">
+						<span class="icon_s"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/jPages.js"></script>
+	    <script type="text/javascript">
+            function getActivityPage() {
+                var page = 1,rows=6;
+                $.ajax({
+                    url: '/api/article/list?articleType=3&page='+page+'&rows='+rows,
+                    type: 'POST',
+                    data: '',
+                    dataType: 'json',
+                    success: function (data) {
+                        if(data.success){
+						data = data.obj;
+                        var html = '';
+                        for (var i = 0; i < data.total; i++) {
+                            html += '<div></div>';
+                        }
+                        $('#itemContainer').empty().append(html);
+
+                        html = '';
+                        if (data.total > 0) {
+                        $.each(data.rows, function (index, obj) {
+                           html += '<a class="character block" href="activitydetatils.html?id='+obj.id+'"><div class="success01"><img src="'
+							   +obj.titleImg+'" alt=""></div><div class="full-line1"></div><p class="h2 elli">'
+							   +obj.title+'</p><p class="p6 more-elli">'+obj.intro+'</p></a>';
+                        });
+                        $('.box6').empty().html(html);
+							/* initiate the plugin */
+                            $("div.holder").jPages({
+                                containerID: "itemContainer",
+                                perPage: rows,
+                                startPage: 1,
+                                startRange: 1,
+                                midRange: 5,
+                                endRange: 1,
+                                callback: function (pages, items) {
+                                    page = pages.current;
+                                    $.ajax({
+                                        url: '/api/article/list?articleType=3&page=' + page + '&rows=' + rows,
+                                        type: 'POST',
+                                        data: '',
+                                        dataType: 'json',
+                                        success: function (data) {
+                                            data = data.obj;
+                                            var html = '';
+                                            $.each(data.rows, function (index, obj) {
+                                                html += '<a class="character block" href="activitydetatils.html?id='+obj.id+'"><div class="success01"><img src="'
+                                                    +obj.titleImg+'" alt=""></div><div class="full-line1"></div><p class="h2 elli">'
+                                                    +obj.title+'</p><p class="p6 more-elli">'+obj.intro+'</p></a>';
+                                            });
+                                            $('.box6').empty().html(html);
+                                        }
+                                    });
+                                }});
+                        }else{
+                            $('.box').empty();
+                            html = '<p class="tip">没找到你要的</p>';
+                            $('div.holder').empty().html(html);
+                        }
+                      }
+                    }
+                });
+            }
+            $(function () {
+                getActivityPage();
+                console.log($('.jp-current').text());
+                if($('.jp-current').text()===1){
+                    alert(1);
+				}
+            })
+		</script>
+	</body>
+
+</html>

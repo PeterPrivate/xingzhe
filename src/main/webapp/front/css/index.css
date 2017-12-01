@@ -1,0 +1,173 @@
+.banner{
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+}
+.class-type{
+    height: 750px;
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 78px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 1180px;
+    margin: auto;
+}
+.class-type p{
+    text-align: center;
+}
+.class-type p.lang-cn{
+    font-size: 42px;
+    color: #333333;
+}
+.class-type p.lang-en{
+    font-size: 12px;
+    color: #999999;
+    line-height: 35px;
+}
+.class-type .class-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+    margin-top: 60px;
+}
+.learntype .logo p{
+    margin-bottom: 42px;
+}
+.class-type .learntype{
+    width: 283px;
+    height: 378px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 18px;
+    color: #333333;
+    padding-bottom: 20px;
+}
+.class-type .learntype img{
+    margin-top: 49px;
+    margin-bottom: 30px;
+}
+.learntype .type-intr{
+    flex: 1;
+}
+.learntype .type-intr ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.learntype .type-intr li{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+.job-prospects{
+    height: 1001px;
+    width: 1180px;
+    margin: auto;
+    background:  url("../images/desin-bg.png") no-repeat center;
+    background-size: contain;
+    position: relative;
+    display: flex;
+}
+.title{
+    width: 100%;
+}
+.title p:nth-of-type(1){
+    font-size: 42px;
+    color: #333;
+    text-align: center;
+}
+.title p:nth-of-type(2){
+    font-size: 18px;
+    color: #999999;
+    text-align: center;
+}
+.job-prospects .job{
+    position: absolute;
+}
+.job.job-ui{
+    top: 45%;
+    left: 24%;
+}
+.job.job-des{
+    top: 76%;
+    left: 36%;
+}
+.job.job-web{
+    top: 73%;
+    left: 61%;
+}
+.job.job-dian{
+    top: 50%;
+    left: 68%;
+}
+.job.job-alldes{
+    top: 30%;
+    left: 52%;
+}
+.job.job-des p{
+    font-size: 22px;
+}
+.job-prospects .job p{
+    color: #fff;
+    font-size: 22px;
+}
+.student-oups{
+    height: 664px;
+    background:  url("../images/oups-bg.png") no-repeat center;
+    background-size: cover;
+    padding-top: 70px;
+}
+.student-oups .title{
+    margin-bottom: 60px;
+}
+.student-oups .title p:nth-of-type(1){
+    font-size: 42px;
+    color: #fff;
+}
+.student-oups .title p:nth-of-type(2){
+    font-size: 18px;
+    color: #999999;
+    line-height: 35px;
+}
+.slick-dots{
+    display: flex;
+    justify-content: center;
+}
+.slick-dots ul{
+
+}
+.slick-dots li button {
+    margin-top: 60px;
+    margin-right: 10px;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 12px;
+    height: 6px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: #959595;
+}
+.slick-dots li.slick-active button{
+    width: 24px;
+    background-color: #f34837;
+}
